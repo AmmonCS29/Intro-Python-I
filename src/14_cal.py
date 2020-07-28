@@ -30,3 +30,37 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+## 1.If no input print callendar for current month using todays date.
+## 2.first argument is for the month
+# 3.two arguments = month and year. Second argument is year.
+# 4.print a usage statement to the terminal indicating 
+# the format that your program expects arguments to be given.
+# Then exit the program.
+args = sys.argv
+now = datetime.now()
+month = now.month
+year = now.year
+# tc = calender.TextCalendar()
+
+if len(args) == 1:
+  print(args)
+  print(calendar.month(year, month))
+elif len(args) == 2:
+  month = int(args[1])
+  print(month)
+  print(calendar.month(year, month))
+elif len(args) == 3:
+  month = int(args[1])
+  year = int(args[2])
+  print(calendar.month(year, month))
+  # print(calendar.TextCalendar().prmonth(year, month))
+else:
+    print("Error: should bin in format \n month(1-12) year(yyyy)")
+
+
+
+
+
+
